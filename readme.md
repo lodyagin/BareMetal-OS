@@ -7,8 +7,8 @@ The easiest way to create a BareMetal OS build environment. These scripts will d
 Initial configuration
 ---------------------
 
-	git clone https://github.com/ReturnInfinity/BareMetal.git
-	cd BareMetal
+	git clone https://github.com/lodyagin/BareMetal-OS.git
+	cd BareMetal-OS
 	./setup.sh
 
 setup.sh automatically runs build, format, and install

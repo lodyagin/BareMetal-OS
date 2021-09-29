@@ -1,17 +1,17 @@
-#!/bin/sh
+#!/bin/sh -x
 
-if [ ! -d "$src" ]; then
-  mkdir src
-fi
+mkdir -p src
 cd src
-git clone https://github.com/ReturnInfinity/BMFS.git
-git clone https://github.com/ReturnInfinity/Pure64.git
-git clone https://github.com/ReturnInfinity/BareMetal-OS.git
+git clone -q -b stable https://github.com/lodyagin/BMFS.git
+git clone -q -b stable https://github.com/lodyagin/Pure64.git
+git clone -q -b stable https://github.com/lodyagin/BareMetal-OS-legacy.git BareMetal-OS
+# dev mode
+#git clone -q -b stable git@github.com:lodyagin/BMFS.git
+#git clone -q -b stable git@github.com:lodyagin/Pure64.git
+#git clone -q -b stable git@github.com:lodyagin/BareMetal-OS-legacy.git BareMetal-OS
 cd ..
 
-if [ ! -d "$bin" ]; then
-  mkdir bin
-fi
+mkdir -p bin
 platform=`uname`
 case "${platform}" in
   Darwin)
